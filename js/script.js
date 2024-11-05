@@ -338,6 +338,7 @@ $(document).ready(function () {
     });
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const chatContainer = document.querySelector(".chat-container");
 
@@ -365,4 +366,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // chatContainer 요소를 관찰
   observer.observe(chatContainer);
+});
+document.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  document.getElementById("progress-bar").style.width = scrollPercent + "%";
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".fade-in-element");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // 요소가 한 번 나타나면 관찰 중지
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollAnimateTextElements = document.querySelectorAll(
+    ".scroll-animate-text"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  scrollAnimateTextElements.forEach((element) => observer.observe(element));
 });
