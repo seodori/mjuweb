@@ -1,0 +1,470 @@
+<html>
+  <head>
+    <!-- JQuery Load -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS Load -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- High Chart Load -->
+    <script src="js/script.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+  <header class="header">
+    <div>EPISODE: 책과 얽힌 재미있는 이야기</div>
+    <nav class="nav">
+      <a href="#title0" class="menubtn" style="margin: 0px">Prologue</a>
+      <a href="#title1" class="menubtn">Chapter.1</a>
+      <a href="#title2" class="menubtn">Chapter.2</a>
+      <a href="#title3" class="menubtn">Chapter.3</a>
+      <a href="#title4" class="menubtn">Chapter.4</a>
+      <a href="#title5" class="menubtn">Chapter.5</a>
+    </nav>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </header>
+  <body>
+    <div class="titleContainer">
+      <a name="title0"></a>
+      <div class="blank" style="height: 200px"></div>
+      <div style="margin: 20px; text-align: center">
+        <img class="titleimage container" src="img/title.png" />
+        <div class="scroll-highlight-container">
+          <p class="boldText scroll-highlight-text" style="margin-top: 30px">
+            &nbsp;책, 얼마나 읽고 있나요?&nbsp;
+          </p>
+        </div>
+        <div class="contents container">
+          <br />지난해 우리나라 성인 <mark><b>10명 가운데 6명</b></mark> 정도는
+          1년 동안 책을 단 한 권도 읽지 않은 것으로 나타났습니다.
+        </div>
+        <div class="blank"></div>
+        <div style="text-align: left">
+          <img
+            class="contentsImg"
+            src="img/img1.png"
+            style="
+              width: 400px;
+              height: 400px;
+              margin-top: 100px;
+              margin-left: 150px;
+            "
+          />
+        </div>
+        <div class="blank" style="height: 250px"></div>
+        <div
+          class="contents container"
+          style="text-align: right; margin-right: 100px"
+        >
+          문화체육관광부가 발표한 ‘2023 국민 독서실태조사’ 자료를 보면,<br />
+          우리나라 성인의 <mark><b>연간 종합독서량은 3.9권</b></mark
+          >으로 전 조사가 이뤄진 2021년보다 0.6권 줄었습니다.
+        </div>
+      </div>
+      <div class="slanted-background" style="z-index: 200; margin: 0">
+        <div>
+          <div
+            class="contentWhite"
+            style="margin-top: 300px; margin-left: 135px"
+          >
+            2023 국민 독서 실태 조사
+          </div>
+          <div class="contentGreen">
+            1년간 책을 한 번 이라도 읽어본 적이 있나요?
+          </div>
+          <div class="graphContainter">
+            <div id="container" class="chart-container"></div>
+          </div>
+          <div class="contentWhite" style="text-align: center">
+            성인의 평균 독서 시간은 평일 18.5분, 휴일 25.0분이었고, 도서
+            구입량은 종이책이 1.0권, 전자책은 1.2권이었습니다.
+          </div>
+          <div class="blank" style="height: 200px"></div>
+          <div class="contentWhite" style="text-align: center">
+            전자책이 많이 보급되었음에도,
+          </div>
+          <div class="contents" style="text-align: center; font-size: 20px">
+            <mark
+              ><b>
+                &nbsp;책을 접하기 쉬워졌음에도 불구하고 상당히 낮은 수치를
+                기록하고 있죠.&nbsp;
+              </b></mark
+            >
+          </div>
+          <div class="blank" style="height: 200px"></div>
+          <div class="contentGreen" style="text-align: left">
+            <mark style="background-color: #232323; color: #00ff22"
+              ><b>
+                &nbsp;그런데 최근, 주목할만한 수치가 나타납니다&nbsp;
+              </b></mark
+            >
+          </div>
+          <div class="graphContainter">
+            <div id="container2" class="chart-container"></div>
+          </div>
+          <div class="blank" style="height: 200px"></div>
+          <div class="contentGreen" style="text-align: left">
+            <mark style="background-color: #232323; color: #00ff22"
+              ><b> &nbsp;도대체 무슨 일이 일어난 것일까요?&nbsp; </b></mark
+            >
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center">
+        <img
+          src="img/img2.png"
+          alt="Background Image"
+          class="background-image"
+        />
+      </div>
+    </div>
+    <div class="blank" style="height: 400px"></div>
+    <div
+      class="contents container fade-in-element"
+      style="
+        text-align: right;
+        margin-right: 50px;
+        font-size: 30px;
+        font-weight: 700;
+      "
+    >
+      “역사적 트라우마를 마주 보고&nbsp;&nbsp;<br />
+      인간 삶의 연약함을 드러내는 강렬한 시적 산문”
+    </div>
+    <div class="blank" style="height: 30px"></div>
+    <div
+      class="contents container"
+      style="
+        text-align: right;
+        margin-right: 60px;
+        font-size: 20px;
+        font-weight: 300;
+      "
+    >
+      -스웨덴 한림원
+    </div>
+    <div class="blank" style="height: 100px"></div>
+    <div class="chat-container">
+      <img src="img/chat1.png" class="speech-bubble bubble1" alt="말풍선 1" />
+      <img src="img/chat2.png" class="speech-bubble bubble2" alt="말풍선 2" />
+    </div>
+    <a name="title1"></a>
+    <div class="blank" style="height: 200px"></div>
+    <p class="title container">뉴스는 봤는데.. 어떤 작가더라?</p>
+    <div class="contents container"><br />아까 했던 말, 기억하시나요?</div>
+    <div class="blank" style="height: 30px"></div>
+    <div class="contents container">
+      <br /><b
+        >“역사적 트라우마를 마주 보고 인간 삶의 연약함을 드러내는 강렬한 시적
+        산문”</b
+      >
+    </div>
+    <div class="contents container">
+      노벨상 수상자를 결정하는 스웨덴 한림원은 한강 작가의 작품에 대하여 이와
+      같이 말을 하며 그녀를 올해 문학상의 주인공으로 발표했어요.
+    </div>
+    <div style="width: 100%">
+      <img class="contentsImg img4" src="img/img4.png" />
+    </div>
+    <a name="title2"></a>
+    <div class="blank" style="height: 150px"></div>
+
+    <div class="background-black">
+      <div class="blank" style="height: 150px"></div>
+      <p class="title container" style="color: white">
+        이 말이 어떤 의미냐구요?
+      </p>
+      <div class="blank" style="height: 180px"></div>
+      <div class="contents-center">
+        <span class="scroll-animate-text green"
+          ><b>“역사적 트라우마를 마주 보고 </b></span
+        >
+        인간 삶의 연약함을 드러내는 강렬한 시적 산문”
+      </div>
+      <div class="contents-center" style="font-weight: 300; font-size: 15px">
+        <br />한강 작가는 우리 현대사의 비극을 꾸준히 탐구해왔어요.<br />
+        5.18 민주화운동 당시 학살 사건을 다룬 소설 ‘소년이 온다’와 제주 4.3
+        사건을 배경으로 한 <b>‘작별하지 않는다’</b>가 대표적이에요.
+      </div>
+      <div style="text-align: right">
+        <img class="contentsImg img5" src="img/img5.png" />
+      </div>
+      <div style="text-align: right">
+        <img class="contentsImg img6" src="img/img6.png" />
+      </div>
+      <div class="blank" style="height: 180px"></div>
+      <div class="contents-center">
+        “역사적 트라우마를 마주 보고
+        <span class="green scroll-animate-text"
+          ><b> 인간 삶의 연약함을 드러내는</b></span
+        >
+        강렬한 시적 산문”
+      </div>
+      <div class="contents-center" style="font-weight: 300; font-size: 15px">
+        <br />‘폭력’과 ‘인간성’은 한강 작가의 작품을 관통하는 중요한 테마예요.
+        <br />
+        대표작인 <b>‘채식주의자’</b>는 육식과 가부장제로 상징되는 폭력 앞에 놓인
+        인간의 취약한 모습을 섬세하게 그린 소설이고요.<br />
+        2016년, 한강 작가는 이 작품으로 노벨문학상과 더불어 세계 3대 문학상 중
+        하나로 꼽히는 맨부커상을 받기도 했어요.
+      </div>
+      <div class="blank" style="height: 180px"></div>
+      <div class="contents-center">
+        “역사적 트라우마를 마주 보고 인간 삶의 연약함을 드러내는
+        <span class="green scroll-animate-text"><b>강렬한 시적 산문”</b></span>
+      </div>
+      <div class="contents-center" style="font-weight: 300; font-size: 15px">
+        <br />최근에는 소설가로 더 잘 알려졌지만, 사실 한강 작가는
+        <b>‘서울의 겨울’</b>
+        등의 시로 처음 문단에 발을 들였어요.
+        <br />
+        ‘서랍에 저녁을 넣어 두었다’라는 제목의 시집을 발표하기도 했고요.
+      </div>
+      <a name="title3"></a>
+      <div class="blank" style="height: 500px"></div>
+    </div>
+
+    <div class="blank" style="height: 120px"></div>
+
+    <p
+      class="title container"
+      class="title container"
+      style="
+        margin-top: 30px;
+        text-underline-offset: 5px;
+        text-decoration: underline solid 4px #00ff22;
+      "
+    >
+      그래서, 어떤 책부터 읽어보아야 할까요?
+    </p>
+    <div class="contents container">
+      <br />작가님의 대표작, 무엇이 있을까요?
+      <div class="blank" style="height: 80px"></div>
+    </div>
+    <div class="box">여기 간단하게 정리해봤어요!</div>
+    <div class="book-gallery">
+      <!-- 책 설명창 -->
+      <div class="book-description">
+        <div class="description-content">
+          <div class="description-image">
+            <!-- 클릭한 책의 이미지가 여기 나타남 -->
+          </div>
+          <div class="description-text-content">
+            <h2>책 제목</h2>
+            <hr class="divider" />
+            <p class="description-text">여기에 책 설명이 표시됩니다.</p>
+            <button class="close-description">설명창 닫기</button>
+          </div>
+        </div>
+      </div>
+      <a name="title4"></a>
+
+      <!-- 책 표지들 -->
+      <div class="book-row">
+        <div
+          class="book"
+          data-title="작별하지 않는다"
+          data-description="제주 4·3 사건을 배경으로, 역사 속의 상처와 잃어버린 이들을 애도하는 마음을 담은 소설입니다. 이 작품은 상실과 슬픔을 겪은 인물들이 서로의 이야기를 나누며 고통을 치유하고 기억을 잇는 과정을 그립니다. 한강은 아름답고 섬세한 문체로 트라우마를 마주하는 인물들의 내면을 깊이 있게 묘사하며, 비극을 기록하고 기억하는 일의 중요성을 강조합니다. 읽는 이로 하여금 아픔을 공감하고 그 슬픔을 함께하는 경험을 하게 만드는 작품입니다."
+          data-image="img/book1.png"
+        >
+          <img src="img/book1.png" alt="Book 1" />
+        </div>
+        <div
+          class="book"
+          data-title="소년이 온다"
+          data-description="한강의 독특한 감성적 글쓰기와 역사적 사실의 무게가 조화를 이루며, 읽는 이로 하여금 잊을 수 없는 충격과 감동을 남깁니다. 
+          광주 민주화 운동이라는 무거운 주제를 어린아이의 시각에서 다룸으로써 사건의 잔혹성과 
+          그 안에서 피어나는 희망과 연대를 동시에 느끼게 하여, 독자들에게 깊은 여운을 남기는 작품으로 평가받습니다."
+          data-image="img/book2.png"
+        >
+          <img src="img/book2.png" alt="Book 2" />
+        </div>
+        <div
+          class="book"
+          data-title="채식주의자"
+          data-description="채식주의자는 평범한 주부 영혜가 육식을 거부하면서 벌어지는 갈등과 내면의 변화를 다룬 소설입니다. 영혜의 채식 선언은 가족과 사회의 억압과 충돌을 불러일으키며, 인간의 본능과 자유에 대한 깊은 질문을 던집니다. 한강은 강렬한 문체로 인간의 욕망과 폭력성을 탐구해, 독자들에게 불편한 진실을 마주하게 합니다."
+          data-image="img/book3.png"
+        >
+          <img src="img/book3.png" alt="Book 3" />
+        </div>
+        <div
+          class="book"
+          data-title="그대의 차가운 손"
+          data-description="한강 작가의 두 번째 장편소설인 그대의 차가운 손은 조각가 장운형의 실종과 그가 남긴 수기를 통해 인간 내면의 어두운 면을 탐구하는 작품입니다. 장운형은 인체를 석고로 본뜨는 ‘라이프캐스팅’ 기법을 사용하여 작품을 제작하며, 이를 통해 인간 존재의 본질과 형식에 대한 질문을 던집니다. 소설은 그의 작업 과정과 모델들과의 관계를 통해 사회적 가면 아래 숨겨진 인간의 상처와 공허함을 섬세하게 그려냅니다. 한강은 특유의 서정적이면서도 강렬한 문체로 삶의 모순을 예리하게 포착하며, 독자들에게 깊은 여운을 남깁니다."
+          data-image="img/book4.png"
+        >
+          <img src="img/book4.png" alt="Book 4" />
+        </div>
+        <div
+          class="book"
+          data-title="희랍어 시간"
+          data-description="희랍어 시간은 죽음과 상실을 주제로, 깊은 슬픔 속에서도 살아가는 인간의 회복과 애도에 대한 이야기를 담고 있습니다. 소설은 가까운 이를 잃은 주인공이 그리스어를 배우며 과거와 현재를 돌아보는 여정을 그립니다. 그리스어의 어원을 통해 상실의 의미를 되새기고, 사랑과 죽음을 묵상하는 과정은 치유와 회복의 시간을 상징적으로 보여줍니다. 한강의 시적인 문체가 인상적이며, 독자들에게 깊은 공감과 위로를 전하는 작품으로 평가받습니다."
+          data-image="img/book5.png"
+        >
+          <img src="img/book5.png" alt="Book 5" />
+        </div>
+      </div>
+    </div>
+
+    <div class="blank" style="height: 120px"></div>
+    <p
+      class="title containerd"
+      style="
+        text-align: center;
+        background-color: #00ff22;
+        height: 50px;
+        padding-top: 5px;
+        border: 1px solid #232323;
+      "
+    >
+      읽어 보고는 싶은데, 다 품절이래요ㅠㅠ
+    </p>
+    <div class="blank" style="height: 80px"></div>
+    <div class="contents container">
+      맞아요. 노벨문학상은 후보 목록을 철저히 비밀에 부치는 데다, 올해 한강
+      작가가 상을 받을 거라고 누구도 예상하지 못했는데요,
+    </div>
+    <div class="blank"></div>
+    <div class="contents container">
+      노벨문학상 수상자가 발표되자마자, 한 작가의 작품은 대부분의 온·오프라인
+      서점에서 동났어요. 출판사들은 부랴부랴 책을 더 찍어내고 있다고.<br />
+      출판업계는 이번 수상 소식으로 그동안 가라앉아 있던 출판 시장에 활기가
+      돌기를 기대하고 있어요.
+    </div>
+    <a name="title5"></a>
+    <div class="blank" style="height: 180px"></div>
+    <div
+      class="slanted-background2"
+      style="background-image: url(img/img7.png)"
+    >
+      <div>
+        <div class="blank" style="height: 120px"></div>
+        <p class="title container" style="color: white">
+          주문한 책을 기다리면서 볼 콘텐츠는 없을까?
+        </p>
+        <div
+          class="contentWhite"
+          style="text-align: center; font-size: 18px; font-weight: 300"
+        >
+          <br />그럴 줄 알고 방송 프로그램부터 음악까지, 한강 작가의 작품 세계를
+          더 깊이 이해하기 위해 함께 보면 좋을 콘텐츠를 싹 모아왔어요:
+        </div>
+      </div>
+      <div class="blank" style="height: 150px"></div>
+      <div class="contents" style="text-align: center; font-size: 20px">
+        <mark
+          ><b>
+            &nbsp;KBS 노벨문학상 수상 특집 다큐멘터리 ‘한강’ 📺: &nbsp;
+          </b></mark
+        >
+      </div>
+      <div
+        class="contentWhite"
+        style="text-align: center; font-size: 18px; font-weight: 500"
+      >
+        <br />한강 작가의 삶을 톺아보고, <br />
+        그의 작품 세계를 국내외 문학평론가와 출판계, 독자 등 다양한 시각에서
+        분석하는 다큐멘터리 프로그램이에요. <br />13일 오후 7시 10분 KBS1에서
+        방송됐어요.
+      </div>
+      <div class="blank"></div>
+      <div class="container">
+        <a href="https://youtu.be/7snj87PMxeQ?si=l7fWdT5eFcaeYqP9">
+          <img src="img/img8.png" style="width: 1000px; height: auto" />
+        </a>
+      </div>
+      <div class="blank" style="height: 150px"></div>
+      <div class="contents" style="text-align: center; font-size: 20px">
+        <mark><b> &nbsp;한강 작가 관련 콘텐츠 💻:  &nbsp; </b></mark>
+      </div>
+      <div
+        class="contentWhite"
+        style="text-align: center; font-size: 18px; font-weight: 500"
+      >
+        <br />EBS는 한강 작가에 관한 다양한 영상 콘텐츠를 올해 12월 31일까지
+        무료로 공개해요. <br />한강 작가의 작품을 소개한 강의나 교양
+        프로그램부터 그가 출연한 북콘서트 영상까지 만나볼 수 있어요.
+      </div>
+      <div class="blank"></div>
+      <div class="container">
+        <a href="https://youtu.be/u_vJiH5E7ng?si=yyHQrh0CmP9uCZ0i">
+          <img src="img/img9.png" style="width: 1000px; height: auto"
+        /></a>
+      </div>
+      <div class="blank" style="height: 150px"></div>
+      <div class="contents" style="text-align: center; font-size: 20px">
+        <mark
+          ><b>
+            &nbsp;AKMU ‘어떻게 이별까지 사랑하겠어, 널 사랑하는 거지’ 🎵:&nbsp;
+          </b></mark
+        >
+      </div>
+      <div
+        class="contentWhite"
+        style="text-align: center; font-size: 18px; font-weight: 500"
+      >
+        <br />
+        2019년 발매된 이 노래는 며칠 전부터 국내 음원 차트에서 ‘역주행’을
+        시작했는데요.<br />한강 작가가 ‘작별하지 않는다’를 쓸 때 듣고 눈물을
+        흘린 곡이라고 소개했거든요.<br />특히 그에게 와닿은 구절은 노래의 마지막
+        부분인 “어떻게 내가 / 어떻게 너를 / 이후에 우리 바다처럼 깊은 사랑이 /
+        다 마를 때까지 기다리는 게 이별일 텐데”였다고.
+      </div>
+      <div class="blank"></div>
+      <div class="container">
+        <a href="https://youtu.be/m3DZsBw5bnE?si=QJLlfDFZg9ODyZbA">
+          <img src="img/lp-image.png" alt="LP Record" class="lp-image" />
+          <img src="img/img10.png" style="width: 1000px; height: auto"
+        /></a>
+      </div>
+    </div>
+    <img class="titleimage container" src="img/title.png" />
+    <div class="blank"></div>
+    <div class="highlight-container">
+      <div class="boldText highlight-text">
+        <b>
+          &nbsp;삶과 죽음의 경계에서 피어나는 이야기를 마주할 준비가 되셨나요?
+        </b>
+      </div>
+    </div>
+    <div class="blank" style="height: 200px"></div>
+  </body>
+  <footer class="footer">
+    <div class="footer-content">
+      <p><strong>명지대학교/ 디지털콘텐츠디자인/ 60211639 / 홍서현</strong></p>
+      <div class="reference">
+        <span><strong>참고자료:</strong> 2023 국민 독서 실태 조사</span>
+        <span>
+          <a href="https://newneek.co/@newneek/article/13041" target="_blank"
+            >https://newneek.co/@newneek/article/13041</a
+          >
+        </span>
+        <span>
+          <a href="https://comp.fnguide.com/" target="_blank"
+            >https://comp.fnguide.com/</a
+          >
+        </span>
+        <span>
+          <a
+            href="https://youtu.be/7snj87PMxeQ?si=wP9i3xgcI5ws6FVd"
+            target="_blank"
+            >https://youtu.be/7snj87PMxeQ?si=wP9i3xgcI5ws6FVd</a
+          >
+        </span>
+        <span>
+          <a href="https://youtu.be/m3DZsBw5bnE?feature=shared" target="_blank"
+            >https://youtu.be/m3DZsBw5bnE?feature=shared</a
+          >
+        </span>
+        <div class="blank"></div>
+      </div>
+    </div>
+  </footer>
+</html>
